@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EtiquetaController;
+use App\Livewire\ShowPeliculas;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,4 +30,6 @@ Route::middleware([
     })->name('dashboard');
     Route::resource('categories', CategoryController::class)->except('show');
     Route::resource('etiquetas', EtiquetaController::class)->except('show');
+
+    Route::get('peliculas', ShowPeliculas::class)->name('peliculas.show');
 });

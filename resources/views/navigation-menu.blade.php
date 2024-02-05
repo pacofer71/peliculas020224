@@ -21,6 +21,10 @@
                     <x-nav-link href="{{ route('etiquetas.index') }}" :active="request()->routeIs('etiquetas.*')">
                         Gestionar Etiquetas
                     </x-nav-link>
+                    
+                    <x-nav-link href="{{ route('peliculas.show') }}" :active="request()->routeIs('peliculas.show')">
+                        Gestionar Películas
+                    </x-nav-link>
                 </div>
             </div>
 
