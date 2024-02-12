@@ -36,6 +36,14 @@ class Pelicula extends Model
     }
 
 
+    public function getTagsId():array {
+        $tags=[];
+        foreach($this->etiquetas as $etiqueta){
+            $tags[]=$etiqueta->id;
+        }
+        return $tags;
+    }
+
 
 
 

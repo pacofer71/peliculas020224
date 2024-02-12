@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EtiquetaController;
+use App\Http\Controllers\Socialite\GithubController;
+use App\Http\Controllers\Socialite\GoogleController;
 use App\Livewire\ShowPeliculas;
 use Illuminate\Support\Facades\Route;
 
@@ -33,3 +35,9 @@ Route::middleware([
 
     Route::get('peliculas', ShowPeliculas::class)->name('peliculas.show');
 });
+
+Route::get('/auth/github/redirect', [GithubController::class, 'redirect'])->name('github.redirect');
+Route::get('/auth/github/callback', [GithubController::class, 'callback'])->name('github.callback');
+
+Route::get('/auth/google/redirect', [GoogleController::class, 'redirect'])->name('google.redirect');
+Route::get('/auth/google/callback', [GoogleController::class, 'callback'])->name('google.callback');
